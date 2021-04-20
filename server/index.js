@@ -7,6 +7,9 @@ const server = http.createServer(app);
 const io = socketio(server);
 const router = require('./router')
 
+io.on('connection', (socket)=>{
+   console.log('we have a new connection')
+});
 app.use(router);
 server.listen(PORT, ()=>{
     console.log(`Server has started on port ${PORT}`);
