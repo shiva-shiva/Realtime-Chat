@@ -8,10 +8,10 @@ const Join = ()=>{
         <div className="joinOuterContainer">
             <div className="joinInnerContainer">
                 <h1 class="heading">Join</h1>
-                <div><input placeholder="" className="joinInput" type="text" onChange={}/></div>
-                <div><input placeholder="" className="joinInput" type="text" onChange={}/></div>
+                <div><input placeholder="" className="joinInput " type="text" onChange={(event)=>{setName(event.target.value)}}/></div>
+                <div><input placeholder="" className="joinInput mt-20" type="text" onChange={(event)=>{setRoom(event.target.value)}}/></div>
                 <link>
-                  <button className="button" type="submit">Sign In</button>
+                  <button className="button mt-20" type="submit">Sign In</button>
                 </link>
 
             </div>
