@@ -8,10 +8,11 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 app.use(cors());
-const router = require('./router')
+const router = require('./router');
+const { callbackify } = require('util');
 io.on('connection', (socket)=>{
  console.log('we have a new connection!!!')
- socket.on('join', ({name ,room})=>{
+ socket.on('join', ({name ,room},callback)=>{
      console.log(name ,room);
  })
  socket.on('disconnect',()=>{
