@@ -1,19 +1,20 @@
 import React from 'react';
 
-import './Input.css';
+import onlineIcon from '../../icons/onlineIcon.png';
+import closeIcon from '../../icons/closeIcon.png';
 
-const Input = ({ setMessage, sendMessage, message }) => (
-  <form className="form">
-    <input
-      className="input"
-      type="text"
-      placeholder="Type a message..."
-      value={message}
-      onChange={({ target: { value } }) => setMessage(value)}
-      onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
-    />
-    <button className="sendButton" onClick={e => sendMessage(e)}>Send</button>
-  </form>
-)
+import './InfoBar.css';
 
-export default Input;
+const InfoBar = ({ room }) => (
+  <div className="infoBar">
+    <div className="leftInnerContainer">
+      <img className="onlineIcon" src={onlineIcon} alt="online icon" />
+      <h3>{room}</h3>
+    </div>
+    <div className="rightInnerContainer">
+      <a href="/"><img src={closeIcon} alt="close icon" /></a>
+    </div>
+  </div>
+);
+
+export default InfoBar;
